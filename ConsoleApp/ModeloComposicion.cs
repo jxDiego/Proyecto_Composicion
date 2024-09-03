@@ -1,17 +1,17 @@
 using System;
 
-namespace ConsoleApp.VentaCompuestos
+namespace ConsoleApp.Compuestos
 {
     public class Clientes
     {
         private int id = 0;
-        private int cedula = 0;
+        private string cedula = "";
         private string nombre = "";
         private int contacto = 0;
         private string direccion = "";
 
         public int Id { get => this.id; set => this.id = value; }
-        public int Cedula { get => this.cedula; set => this.cedula = value; }
+        public string Cedula { get => this.cedula; set => this.cedula = value; }
         public string Nombre { get => this.nombre; set => this.nombre = value; }
         public int Contacto { get => this.contacto; set => this.contacto = value; }
         public string Direccion { get => this.direccion; set => this.direccion = value; }
@@ -45,7 +45,7 @@ namespace ConsoleApp.VentaCompuestos
         private Clientes? cliente = null;
         private Compuestos? compuesto = null;
         private Estados? estado = null;
-        private string fecha_pedido = "";
+        private DateTime? fecha_pedido = null;
         private int total_pagar = 0;
         private int cant_compuesto = 0;
 
@@ -54,10 +54,11 @@ namespace ConsoleApp.VentaCompuestos
         public Compuestos? Compuesto { get => this.compuesto; set => this.compuesto = value; }
         public Estados? Estado { get => this.estado; set => this.estado = value; }
         
-        public string Fecha_pedido { get => this.fecha_pedido; set => this.fecha_pedido = value; }
+        public DateTime? Fecha_pedido { get => this.fecha_pedido; set => this.fecha_pedido = value; }
         public int Total_pagar { get => this.total_pagar; set => this.total_pagar = value; }
         public int Cant_compuesto { get => this.cant_compuesto; set => this.cant_compuesto = value; }
 
+        
     }
          public class Compuestos
     {
@@ -67,7 +68,7 @@ namespace ConsoleApp.VentaCompuestos
         private Productos? producto = null;
 
         public int Id { get => this.id; set => this.id = value; }
-         public int Cod_compuesto { get => this.cod_compuesto; set => this.cod_compuesto = value; }
+        public int Cod_compuesto { get => this.cod_compuesto; set => this.cod_compuesto = value; }
         public string Nombre_composicion { get => this.nombre_composicion; set => this.nombre_composicion = value; }
         public Productos? Producto { get => this.producto; set => this.producto = value; }
         
@@ -84,10 +85,10 @@ namespace ConsoleApp.VentaCompuestos
 
         public int Id { get => this.id; set => this.id = value; }
         public Tipos_Productos? Tipo_producto { get => this.tipo_producto; set => this.tipo_producto = value; }
-         public int Cod_producto { get => this.cod_producto; set => this.cod_producto = value; }
-         public string Nombre_producto { get => this.nombre_producto; set => this.nombre_producto = value; }
-         public Estados? Estado { get => this.estado; set => this.estado = value; }
-         public int Cantidad_producto { get => this.cantidad_producto; set => this.cantidad_producto = value; }
+        public int Cod_producto { get => this.cod_producto; set => this.cod_producto = value; }
+        public string Nombre_producto { get => this.nombre_producto; set => this.nombre_producto = value; }
+        public Estados? Estado { get => this.estado; set => this.estado = value; }
+        public int Cantidad_producto { get => this.cantidad_producto; set => this.cantidad_producto = value; }
 
     }
         public class Inventarios
@@ -101,23 +102,22 @@ namespace ConsoleApp.VentaCompuestos
         public int Cantidad_afectar { get => this.cantidad_afectar; set => this.cantidad_afectar = value; }
 
     }
-    public class Program 
+
+        public class Program 
     {
         static void Main(string[] args)
         {
-            Clientes cliente1 = new Clientes
+            Clientes clientes= new Clientes
             {
                 Id = 1,
                 Cedula = "123456789",
                 Nombre = "Juan Pérez",
                 Contacto = 987654321,
-                Direccion = "Calle 123"
+                Direccion = "Calle Falsa 123"
             };
             Console.WriteLine($"Cliente: {clientes.Nombre}");
         }
       
     }
-
-
     
 }

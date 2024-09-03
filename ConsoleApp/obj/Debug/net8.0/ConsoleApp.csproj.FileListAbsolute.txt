@@ -1,0 +1,15 @@
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.sourcelink.json
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\bin\Debug\net8.0\ConsoleApp.exe
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\bin\Debug\net8.0\ConsoleApp.deps.json
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\bin\Debug\net8.0\ConsoleApp.runtimeconfig.json
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\bin\Debug\net8.0\ConsoleApp.dll
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\bin\Debug\net8.0\ConsoleApp.pdb
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.dll
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\refint\ConsoleApp.dll
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.pdb
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\redst\Desktop\PROGRAMACION DE SOFTWARE\Proyecto_Composicion\ConsoleApp\obj\Debug\net8.0\ref\ConsoleApp.dll
