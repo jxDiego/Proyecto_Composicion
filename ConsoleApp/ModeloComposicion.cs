@@ -4,7 +4,7 @@ namespace ConsoleApp.VentaCompuestos
 {
     public class Clientes
     {
-        private int id = 0;
+        private int id = 1;
         private string cedula = "";
         private string nombre = "";
         private int contacto = 0;
