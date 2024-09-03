@@ -4,14 +4,14 @@ namespace ConsoleApp.VentaCompuestos
 {
     public class Clientes
     {
-        private int id = 1;
-        private string cedula = "";
+        private int id = 0;
+        private int cedula = 0;
         private string nombre = "";
         private int contacto = 0;
         private string direccion = "";
 
         public int Id { get => this.id; set => this.id = value; }
-        public string Cedula { get => this.cedula; set => this.cedula = value; }
+        public int Cedula { get => this.cedula; set => this.cedula = value; }
         public string Nombre { get => this.nombre; set => this.nombre = value; }
         public int Contacto { get => this.contacto; set => this.contacto = value; }
         public string Direccion { get => this.direccion; set => this.direccion = value; }
@@ -58,7 +58,6 @@ namespace ConsoleApp.VentaCompuestos
         public int Total_pagar { get => this.total_pagar; set => this.total_pagar = value; }
         public int Cant_compuesto { get => this.cant_compuesto; set => this.cant_compuesto = value; }
 
-        
     }
          public class Compuestos
     {
@@ -102,5 +101,23 @@ namespace ConsoleApp.VentaCompuestos
         public int Cantidad_afectar { get => this.cantidad_afectar; set => this.cantidad_afectar = value; }
 
     }
+    public class Program 
+    {
+        static void Main(string[] args)
+        {
+            Clientes cliente1 = new Clientes
+            {
+                Id = 1,
+                Cedula = "123456789",
+                Nombre = "Juan Pérez",
+                Contacto = 987654321,
+                Direccion = "Calle 123"
+            };
+            Console.WriteLine($"Cliente: {clientes.Nombre}");
+        }
+      
+    }
+
+
     
 }
