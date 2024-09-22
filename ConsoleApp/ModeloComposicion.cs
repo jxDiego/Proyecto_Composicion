@@ -28,50 +28,45 @@ namespace ConsoleApp.Compuestos
         public string Nom_tipo { get => this.nom_tipo; set => this.nom_tipo = value; }
     }
 
-    public class Estados
-    {
-        private int id = 0;
-        private string nombre = "";
-        private int grupo = 0;
-
-        public int Id { get => this.id; set => this.id = value; }
-        public string Nombre { get => this.nombre; set => this.nombre = value; }
-        public int Grupo { get => this.grupo; set => this.grupo = value; }
-         
-    }
-     public class Ordenes
+    public class Ordenes
     {
         private int id = 0;
         private Clientes? cliente = null;
         private Compuestos? compuesto = null;
-        private Estados? estado = null;
-        private DateTime? fecha_pedido = null;
+        private string estado_orden = "";
         private int total_pagar = 0;
-        private int cant_compuesto = 0;
+        private DateTime? fecha_pedido = null;
 
         public int Id { get => this.id; set => this.id = value; }
         public Clientes? Cliente { get => this.cliente; set => this.cliente = value; }
         public Compuestos? Compuesto { get => this.compuesto; set => this.compuesto = value; }
-        public Estados? Estado { get => this.estado; set => this.estado = value; }
-        
         public DateTime? Fecha_pedido { get => this.fecha_pedido; set => this.fecha_pedido = value; }
         public int Total_pagar { get => this.total_pagar; set => this.total_pagar = value; }
-        public int Cant_compuesto { get => this.cant_compuesto; set => this.cant_compuesto = value; }
-
-        
+        public string Estado_orden { get => this.estado_orden; set => this.estado_orden = value; }
+  
     }
-         public class Compuestos
+    public class Compuestos
     {
         private int id = 0;
         private int cod_compuesto = 0;
         private string nombre_composicion = "";
-        private Productos? producto = null;
 
         public int Id { get => this.id; set => this.id = value; }
         public int Cod_compuesto { get => this.cod_compuesto; set => this.cod_compuesto = value; }
         public string Nombre_composicion { get => this.nombre_composicion; set => this.nombre_composicion = value; }
-        public Productos? Producto { get => this.producto; set => this.producto = value; }
         
+    }
+    public class Compuestos_Productos
+    {
+        private int id = 0;
+        private Compuestos? compuesto = null;  // Relación con Compuestos
+        private Productos? producto = null;  // Relación con Productos
+        private int cantidadProductoNecesario = 0;
+
+        public int Id { get => this.id; set => this.id = value; }
+        public Compuestos? Compuesto { get => this.compuesto; set => this.compuesto = value; }  // Referencia a Compuestos
+        public Productos? Producto { get => this.producto; set => this.producto = value; }  // Referencia a Productos
+        public int CantidadProductoNecesario { get => this.cantidadProductoNecesario; set => this.cantidadProductoNecesario = value; }
     }
 
     public class Productos
@@ -80,28 +75,52 @@ namespace ConsoleApp.Compuestos
         private Tipos_Productos? tipo_producto = null;
         private int cod_producto = 0;
         private string nombre_producto = "";
-        private Estados? estado = null;
-        private int cantidad_producto = 0;
+        private string estado_producto = "";
 
         public int Id { get => this.id; set => this.id = value; }
         public Tipos_Productos? Tipo_producto { get => this.tipo_producto; set => this.tipo_producto = value; }
         public int Cod_producto { get => this.cod_producto; set => this.cod_producto = value; }
         public string Nombre_producto { get => this.nombre_producto; set => this.nombre_producto = value; }
-        public Estados? Estado { get => this.estado; set => this.estado = value; }
-        public int Cantidad_producto { get => this.cantidad_producto; set => this.cantidad_producto = value; }
+        public string Estado_producto { get => this.estado_producto; set => this.estado_producto = value; }
 
     }
-        public class Inventarios
+    public class Inventarios
     {
         private int id = 0;
         private Productos? producto = null;
         private int cantidad_afectar = 0;
+        private string accion_estado = "";
 
         public int Id { get => this.id; set => this.id = value; }
         public Productos? Producto { get => this.producto; set => this.producto = value; }
         public int Cantidad_afectar { get => this.cantidad_afectar; set => this.cantidad_afectar = value; }
-
+        public string Accion_estado { get => this.accion_estado; set => this.accion_estado = value; }
     }
+    public class Proveedores_Productos
+    {
+        private int id = 0;
+        private Proveedores? proveedor = null;  // Relación con Proveedores
+        private Productos? producto = null;  // Relación con Productos
+        private int cantidadProducto = 0;
+        private DateTime? fechaEntrega = null;
+
+        public int Id { get => this.id; set => this.id = value; }
+        public Proveedores? Proveedor { get => this.proveedor; set => this.proveedor = value; }  // Referencia a Proveedores
+        public Productos? Producto { get => this.producto; set => this.producto = value; }  // Referencia a Productos
+        public int CantidadProducto { get => this.cantidadProducto; set => this.cantidadProducto = value; }
+        public DateTime? FechaEntrega { get => this.fechaEntrega; set => this.fechaEntrega = value; }
+    }
+    public class Proveedores
+    {
+        private int id = 0;
+        private string nombre_proveedor = "";
+        private int contacto = 0;
+
+        public int Id { get => this.id; set => this.id = value; }
+        public string Nombre_Proveedor { get => this.nombre_proveedor; set => this.nombre_proveedor = value; }
+        public int Contacto { get => this.contacto; set => this.contacto = value; }
+    }
+    
 
     
 }
