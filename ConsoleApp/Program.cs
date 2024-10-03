@@ -1,77 +1,77 @@
 ﻿using System;
 using ConsoleApp.Compuestos;
 
-// Crear un cliente usando propiedades (getters y setters)
-Clientes cliente = new Clientes
+
+// instanciamos las clases de productos y tipos de productos
+Tipos_Productos tipoVegetales = new Tipos_Productos { Id = 1, Cod_tipo = 101, Nom_tipo = "Vegetales" };
+Productos tomate = new Productos { Id = 1, Cod_producto = 1001, Nombre_producto = "Tomate", Estado_producto = "Nuevo", Tipo_producto = tipoVegetales };
+
+// creamos un proveedor y una entrega de productos
+Proveedores proveedor1 = new Proveedores { Id = 1, Nombre_Proveedor = "Proveedor de Vegetales", Contacto = 123456789 };
+Proveedores_Productos entregaTomates = new Proveedores_Productos
+{
+    Id = 1,
+    Proveedor = proveedor1,
+    Producto = tomate,
+    CantidadProducto = 5, // Aqui proveedor entrega 5 tomates
+    FechaEntrega = DateTime.Now
+};
+
+// Almacenamos los productos que se ingresaron en el inventario
+Inventarios inventario = new Inventarios
+{
+    Id = 1,
+    Producto = tomate,
+    Cantidad_afectar = entregaTomates.CantidadProducto, // Ingresar 5 tomates al inventario
+    Accion_estado = "Ingresado"
+};
+Console.WriteLine($"El inventario ahora tiene {inventario.Cantidad_afectar} unidades de {tomate.Nombre_producto}.");
+
+// Creamos un cliente cualquiera
+Clientes cliente1 = new Clientes
 {
     Id = 1,
     Cedula = "123456789",
-    Nombre = "Juan Pérez",
+    Nombre = "Juan Perez",
     Contacto = 987654321,
     Direccion = "Calle Falsa 123"
 };
 
-// Crear un proveedor usando propiedades
-Proveedores proveedor = new Proveedores
+// Creamos un compuesto/plato que necesite tomates por ejemplo una ensalada
+Compuestos ensalada = new Compuestos { Id = 1, Cod_compuesto = 2001, Nombre_composicion = "Ensalada" };
+
+// Creamos la relación entre el compuesto y el producto, cuántos tomates se necesitan para la ensalada
+Compuestos_Productos ensaladaTomates = new Compuestos_Productos
 {
     Id = 1,
-    Nombre_Proveedor = "Frutas y Verduras S.A.",
-    Contacto = 123456789
+    Compuesto = ensalada,
+    Producto = tomate,
+    CantidadProductoNecesario = 2 // Se necesitan 2 tomates para la ensalada
 };
 
-// Crear un tipo de producto
-Tipos_Productos tipoProducto = new Tipos_Productos
+// Restamos la cantidad usada del inventario para hacer el compuesto/plato
+if (inventario.Cantidad_afectar >= ensaladaTomates.CantidadProductoNecesario)
+{
+    inventario.Cantidad_afectar -= ensaladaTomates.CantidadProductoNecesario;
+    Console.WriteLine($"Después de preparar la ensalada, quedan {inventario.Cantidad_afectar} unidades de {tomate.Nombre_producto} en el inventario.");
+}
+else
+{
+    Console.WriteLine($"No hay suficientes {tomate.Nombre_producto} en el inventario para preparar la ensalada.");
+}
+
+// Crear una orden
+Ordenes orden1 = new Ordenes
 {
     Id = 1,
-    Cod_tipo = 100,
-    Nom_tipo = "Frutas"
+    Cliente = cliente1,
+    Compuesto = ensalada,
+    Fecha_pedido = DateTime.Now,
+    Total_pagar = 50, // Precio de la ensalada
+    Estado_orden = "Cumplido"
 };
 
-// Crear un producto usando propiedades
-Productos producto = new Productos
-{
-    Id = 1,
-    Cod_producto = 101,
-    Nombre_producto = "Manzana",
-    Estado_producto = "Nuevo",
-    Tipo_producto = tipoProducto
-};
-
-// Crear un compuesto (plato)
-Compuestos compuesto = new Compuestos
-{
-    Id = 1,
-    Cod_compuesto = 123,
-    Nombre_composicion = "Ensalada de Frutas"
-};
-
-// Crear una orden usando propiedades
-Ordenes orden = new Ordenes
-{
-    Id = 1,
-    Cliente = cliente,
-    Compuesto = compuesto,
-    Estado_orden = "En espera",
-    Total_pagar = 120,
-    Fecha_pedido = DateTime.Now
-};
-
-// Crear una relación de proveedores-productos usando propiedades
-Proveedores_Productos provProd = new Proveedores_Productos
-{
-    Id = 1,
-    Proveedor = proveedor,
-    Producto = producto,
-    CantidadProducto = 100,
-    FechaEntrega = DateTime.Now
-};
-
-// Mostrar la información usando getters
-Console.WriteLine($"Cliente: {cliente.Nombre}, Cedula: {cliente.Cedula}, Direccion: {cliente.Direccion}");
-Console.WriteLine($"Proveedor: {proveedor.Nombre_Proveedor}, Contacto: {proveedor.Contacto}");
-Console.WriteLine($"Producto: {producto.Nombre_producto}, Tipo: {producto.Tipo_producto.Nom_tipo}, Estado: {producto.Estado_producto}");
-Console.WriteLine($"Compuesto: {compuesto.Nombre_composicion}");
-Console.WriteLine($"Orden: Estado = {orden.Estado_orden}, Total a Pagar = ${orden.Total_pagar}");
-Console.WriteLine($"Proveedor del Producto: {provProd.Proveedor.Nombre_Proveedor}, Producto: {provProd.Producto.Nombre_producto}, Cantidad: {provProd.CantidadProducto}");
+// Mostrar detalles de la orden
+Console.WriteLine($"Orden creada: {orden1.Compuesto.Nombre_composicion} para el cliente {orden1.Cliente.Nombre}. Total a pagar: {orden1.Total_pagar}.");
 
 

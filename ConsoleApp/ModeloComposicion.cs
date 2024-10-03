@@ -43,7 +43,18 @@ namespace ConsoleApp.Compuestos
         public DateTime? Fecha_pedido { get => this.fecha_pedido; set => this.fecha_pedido = value; }
         public int Total_pagar { get => this.total_pagar; set => this.total_pagar = value; }
         public string Estado_orden { get => this.estado_orden; set => this.estado_orden = value; }
-  
+
+        public void ValidarEstadoOrden()
+        {
+            // Este método podría verificar si la orden está "cumplida" o "en espera", 
+            // No funcional, falta la logica
+        }
+        public void GenerarFactura()
+        {
+            // Este método podría generar una factura para la orden
+            //No funcional, falta la logica
+        }
+
     }
     public class Compuestos
     {
@@ -82,6 +93,17 @@ namespace ConsoleApp.Compuestos
         public int Cod_producto { get => this.cod_producto; set => this.cod_producto = value; }
         public string Nombre_producto { get => this.nombre_producto; set => this.nombre_producto = value; }
         public string Estado_producto { get => this.estado_producto; set => this.estado_producto = value; }
+
+        public void VerificarEstadoProducto()
+        {
+            // Este método podría verificar si un producto está "viejo" o "nuevo", 
+            // no funcional, falta la logica
+        }
+        public void CalcularPrecioProducto()
+        {
+            // Este método podría calcular el precio de un producto en especifico,
+            // no funcional
+        }
 
     }
     public class Inventarios
